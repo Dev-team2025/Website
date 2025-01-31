@@ -11,7 +11,9 @@
     width: 90%;
     max-width: 1200px;
     height: 700px;
-    background-image: linear-gradient(140deg, rgba(0, 72, 114, 0.9) 0%, #291160 100%);
+    background-image:
+        linear-gradient(140deg, rgba(0, 72, 114, 0.689) 0%, #291160cb 100%),
+        url('../../../assets/images/LandingPage/image.png');
     border-top-right-radius: 350px;
     border-bottom-right-radius: 350px;
     display: flex;
@@ -25,6 +27,8 @@
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
 }
 
 .content {

@@ -9,6 +9,8 @@
     box-sizing: border-box;
     margin-top: 20px;
     animation: fadeIn 1s ease-in-out;
+    background: linear-gradient(rgba(0, 0, 0, 0.751), rgba(0, 0, 0, 0.619)), url('../../../assets/newimage.jpeg');
+    background-size: cover;
 }
 
 @keyframes fadeIn {

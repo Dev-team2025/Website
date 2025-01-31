@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { FaBuilding, FaClock, FaPhoneAlt } from "react-icons/fa";
 import axios from 'axios';
 import "./Footer.css";
-import ContactContent2 from '../../Contact/Content2/ContactContent2'
 
 const Footer = () => {
     const [formData, setFormData] = useState({
@@ -48,20 +47,6 @@ const Footer = () => {
 
             <div className="footer-content">
                 {/* Form Section */}
-
-
-                {/* Map Section */}
-                <div className="map-container">
-                    <iframe
-                        title="Dlithe Consultancy Services Map"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1943.9263534391167!2d77.5435929!3d12.9273945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3ff22048982f%3A0x65ea1a29c8a1df5!2sDlithe%20Consultancy%20Services!5e0!3m2!1sen!2sin!4v1615093030434!5m2!1sen!2sin"
-                        width="450"
-                        height="450"
-                        style={{ border: 0 }}
-                        allowFullScreen=""
-                        loading="lazy"
-                    ></iframe>
-                </div>
                 <div className="contact-us">
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
@@ -111,8 +96,9 @@ const Footer = () => {
                         </div>
                     </form>
                 </div>
+
                 {/* Info Section */}
-                <div className="info-container" >
+                <div className="info-container">
                     <div className="info-block">
                         <FaBuilding className="info-icon building-icon" />
                         <div>
@@ -141,6 +127,19 @@ const Footer = () => {
                             <p>info@dlithe.com</p>
                         </div>
                     </div>
+                </div>
+
+                {/* Map Section */}
+                <div className="map-container">
+                    <iframe
+                        title="Dlithe Consultancy Services Map"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1943.9263534391167!2d77.5435929!3d12.9273945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3ff22048982f%3A0x65ea1a29c8a1df5!2sDlithe%20Consultancy%20Services!5e0!3m2!1sen!2sin!4v1615093030434!5m2!1sen!2sin"
+                        width="450"
+                        height="450"
+                        style={{ border: 0 }}
+                        allowFullScreen=""
+                        loading="lazy"
+                    ></iframe>
                 </div>
             </div>
         </footer>

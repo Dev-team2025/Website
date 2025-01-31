@@ -1,107 +1,59 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from "react";
 import './ContactContent2.css';
 
-const ContactContent2 = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        phone: '',
-        program: '',
-        batch: '',
-        message: '',
-    });
-    const [error, setError] = useState('');
-    const [success, setSuccess] = useState('');
-
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value,
-        });
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await axios.post('http://localhost:5000/api/contact', formData, {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-            console.log('Form submitted successfully:', response.data);
-            setSuccess('Form submitted successfully!');
-            setError('');
-            setFormData({
-                name: '',
-                email: '',
-                phone: '',
-                program: '',
-                batch: '',
-                message: '',
-            });
-        } catch (error) {
-            if (error.response) {
-                console.error('Error response data:', error.response.data);
-                console.error('Error response status:', error.response.status);
-                console.error('Error response headers:', error.response.headers);
-            } else if (error.request) {
-                console.error('Error request:', error.request);
-            } else {
-                console.error('Error message:', error.message);
-            }
-            console.error('Error config:', error.config);
-            setError('Failed to submit form. Please try again.');
-            setSuccess('');
-        }
-    };
-
-
+const Waves = () => {
     return (
-        <div className="form-container">
-            <h2>Contact Us</h2>
-            {error && <p className="error-message">{error}</p>}
-            {success && <p className="success-message">{success}</p>}
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="name">Name</label>
-                    <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} required />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="program">Interested Program</label>
-                    <select id="program" name="program" value={formData.program} onChange={handleChange} required>
-                        <option value="internship">Internship</option>
-                        <option value="bootcamp">Bootcamp</option>
-                        <option value="workshop">Workshop</option>
-                    </select>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="batch">Batch</label>
-                    <select id="batch" name="batch" value={formData.batch} onChange={handleChange} required>
-                        <option value="batch1">Batch 1</option>
-                        <option value="batch2">Batch 2</option>
-                        <option value="batch3">Batch 3</option>
-                        <option value="batch4">Batch 4</option>
-                    </select>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="message">Message</label>
-                    <textarea id="message" name="message" rows="4" value={formData.message} onChange={handleChange} required></textarea>
-                </div>
-                <div className="form-group">
-                    <button type="submit">Submit</button>
-                </div>
-            </form>
+        <div className="wave-container">
+            <svg style={{ marginTop: "-150px" }}
+                className="waves"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1440 380"
+            >
+                <path
+                    fill="rgb(0, 39, 77)"
+                    fillOpacity="1"
+                    d="M0,160L48,149.3C96,139,192,117,288,128C384,139,480,181,576,186.7C672,192,768,160,864,138.7C960,117,1056,107,1152,112C1248,117,1344,139,1392,149.3L1440,160L1440,380L1392,380C1344,380,1248,380,1152,380C1056,380,960,380,864,380C768,380,672,380,576,380C480,380,384,380,288,380C192,380,96,380,48,380L0,380Z"
+                ></path>
+            </svg>
+
+            {/* Contact Form */}
+
+            <div className="login-form-container">
+                <img
+                    src="https://img.freepik.com/premium-vector/woman-working-with-laptop_180868-1792.jpg"
+                    alt="Woman working with laptop"
+                    className="form-image" style={{ marginLeft: "-120px" }}
+                />
+                <form className="login-form">
+                    <h2>Contact Us</h2>
+                    <div className="form-group">
+                        <input type="text" id="name" placeholder="Enter your name" />
+                    </div>
+                    <div className="form-group">
+                        <input type="tel" id="phone" placeholder="Enter your phone number" />
+                    </div>
+                    <div className="form-group">
+                        <input type="email" id="email" placeholder="Enter your email" />
+                    </div>
+                    <div className="form-group">
+                        <select id="purpose">
+                            <option value="">Purpose of Contact</option>
+                            <option value="internship">I am looking for internship opportunities</option>
+                            <option value="certifications">I am looking for certifications</option>
+                            <option value="bootcamp">I am looking for bootcamp (train & deploy)</option>
+                            <option value="hr">I am looking for human resources</option>
+                            <option value="training">I am looking for training services for the employees</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </div>
+                    <div className="form-group">
+                        <textarea id="message" placeholder="Enter your message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" className="login-button">Submit</button>
+                </form>
+            </div>
         </div>
     );
 };
 
-export default ContactContent2;
+export default Waves;

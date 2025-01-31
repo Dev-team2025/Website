@@ -36,7 +36,7 @@ const Testimonial = () => {
     return (
         <section className="testimonials">
             {/* <h2 className="section-title text-grey-200 3xl-text">TESTIMONIAL</h2> */}
-            <h2 className="section-title" style={{ fontSize: "50px" }}>What People Are Saying</h2>
+            <h2 className="section-title" style={{ fontSize: "60px", color: "white", fontFamily: "'Share Tech', Helvetica, Arial, Lucida, sans-serif" }}>What People Are Saying</h2>
             <div className="testimonial-grid">
                 {testimonials.map((item) => (
                     <div
