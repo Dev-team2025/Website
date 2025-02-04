@@ -12,7 +12,12 @@ function ServicePage() {
     return (
         <div>
 
-            <Part1 title="Managed IT Services & Support" />
+            <Part1 title=" IT Services and Learning & Development"
+                paragraph="We are leading IT professional services company with two decades of rich experience in delivery excellence, learning & development and human resource functions. Our services are adding values to our customers in achieving greater customer experience "
+                button="Contact us"
+                onButtonClick={() => navigate("/services")}
+                onClickContact={() => navigate("/contactus")}
+            />
             <ITServices />
             <Content3 />
             <ServiceContent4 />

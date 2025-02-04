@@ -1,15 +1,18 @@
 import React from 'react';
-import './ITServices.css'// Import custom CSS for styling
-import { FaLaptop, FaShieldAlt, FaCloud, FaRegLifeRing, FaNetworkWired, FaVirus } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
+import './ITServices.css'; // Import custom CSS for styling
+import { FaLaptop, FaProjectDiagram, FaUserTie, FaBrain, FaUserGraduate, FaChalkboardTeacher } from 'react-icons/fa';
 
 const ITServices = () => {
+    const navigate = useNavigate(); // Initialize navigate
+
     const services = [
-        { title: "Laptop Repair / Desktop Repair", color: "#FF8A00", textColor: "#fff", icon: <FaLaptop /> },
-        { title: "Virus and Spyware Removal", color: "#fff", textColor: "#000", icon: <FaVirus /> },
-        { title: "Data Recovery and Backup Plan", color: "#f4f4f4", textColor: "#000", icon: <FaRegLifeRing /> },
-        { title: "Network Design", color: "#f4f4f4", textColor: "#000", icon: <FaNetworkWired /> },
-        { title: "Cloud Services", color: "#002b5b", textColor: "#fff", icon: <FaCloud /> },
-        { title: "Cyber Security", color: "#FF8A00", textColor: "#fff", icon: <FaShieldAlt /> },
+        { title: "IT Application Development", color: "#FF8A00", textColor: "#fff", icon: <FaLaptop />, path: "/service1" },
+        { title: "Campus to Corporate", color: "#fff", textColor: "#000", icon: <FaChalkboardTeacher />, path: "/service2" },
+        { title: "Bootcamp ", color: "#f4f4f4", textColor: "#000", icon: <FaBrain />, path: "/service3" },
+        { title: "Learning & Development ", color: "#f4f4f4", textColor: "#000", icon: <FaUserGraduate />, path: "/service4" },
+        { title: "Placement Competency Development ", color: "#002b5b", textColor: "#fff", icon: <FaUserTie />, path: "/services/cloud-services" },
+        { title: "Research & Development", color: "#FF8A00", textColor: "#fff", icon: <FaProjectDiagram />, path: "/services/cyber-security" },
     ];
 
     return (
@@ -27,7 +30,12 @@ const ITServices = () => {
                             <div className="service-icon">{service.icon}</div>
                             <h3>{service.title}</h3>
                         </div>
-                        <button className="learn-more-button">Learn More</button>
+                        <button
+                            className="learn-more-button"
+                            onClick={() => navigate(service.path)} // Navigate to the service's page
+                        >
+                            Learn More
+                        </button>
                     </div>
                 ))}
             </div>
