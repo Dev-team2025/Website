@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import './ServiceContent4.css';
 
-const AccordionItem = ({ title, isOpen, onClick }) => {
+const AccordionItem = ({ title, content, isOpen, onClick }) => {
     const contentRef = useRef(null);
 
     return (
@@ -19,9 +19,7 @@ const AccordionItem = ({ title, isOpen, onClick }) => {
                 style={isOpen ? { maxHeight: contentRef.current?.scrollHeight + 'px' } : { maxHeight: 0 }}
             >
                 <div className="accordion-content-inner">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>{content}</p>
                 </div>
             </div>
         </div>
@@ -32,9 +30,18 @@ function ServiceContent4() {
     const [openItem, setOpenItem] = useState(null);
 
     const items = [
-        'Mauris Blandit Aliquet',
-        'Proin Eget Tortor',
-        'Pellentesque in Ipsum'
+        {
+            title: 'IT Application Development',
+            content: 'We craft custom IT applications using diverse technology stacks, from front-end frameworks to robust back-end systems. Our expertise includes full stack development, mobile application development, automation testing, embedded systems, internet of things, cyber security, artificial intelligence, and many more domains. We build scalable, secure, and user-friendly applications tailored to your specific business needs. Our agile development process emphasizes quality, innovation, and timely delivery.'
+        },
+        {
+            title: 'Learning & Development ',
+            content: 'Our Learning & Development services cater to all levels, from freshers to seasoned leaders. We offer targeted programs, including specialized initiatives to groom women leaders. Our learning path spans both technical skills and essential behavioural competencies. We empower your human resources to excel through comprehensive leadership development programs.'
+        },
+        {
+            title: 'Bootcamps ',
+            content: 'Bootcamps bridge the talent gap, delivering ready-to-deploy professionals(freshers or laterals) for the business needs. We hand-pick promising individuals, nurturing their skills to match your business needs. Our agile approach ensures rapid adaptation and continuous improvement. From recruitment to readiness, we empower your team with the right talent.'
+        }
     ];
 
     return (
@@ -42,18 +49,22 @@ function ServiceContent4() {
             <div className="service-wrapper">
                 <div className="service-layout">
                     <div className="service-info">
-                        <h2 className="service-title">Device Repair & Troubleshooting</h2>
+                        <h2 className="service-title">IT Companies</h2>
                         <p className="service-description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                            enim ad minim veniam, quis nostrud exercitation
+                            Our customers seeking to enhance their workforce and technology strategies.
+                            We are engaged as specialists to join hands to solve some of the business challenges.
+                            These partnerships have provided access to our IT consulting experts for strategic
+                            guidance and implementation. Targeted learning and development programs have
+                            empowered employees with critical skills. Collaborating with DLithe has ensured
+                            access to cutting-edge expertise and cost-effective solutions.
                         </p>
 
                         <div className="accordion-wrapper">
                             {items.map((item, index) => (
                                 <AccordionItem
                                     key={index}
-                                    title={item}
+                                    title={item.title}
+                                    content={item.content}
                                     isOpen={openItem === index}
                                     onClick={() => setOpenItem(openItem === index ? null : index)}
                                 />

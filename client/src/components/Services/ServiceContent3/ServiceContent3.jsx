@@ -1,7 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ServiceContent3.css';
+import image from '../../../assets/images/service1.jpg';
 
 const ServiceContent3 = () => {
+    const navigate = useNavigate();
+
     const capsuleStyle = {
         width: '90%',
         height: '600px',
@@ -23,14 +27,22 @@ const ServiceContent3 = () => {
         <section className="hero">
             <div style={capsuleStyle}>
                 <div className="content">
-                    <h1>We Create Fully Connected Systems So You Can Focus On Your Business</h1>
+                    <h1>We create customized offerings to meet your business objectives</h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                        Our tailor-made services provide you with the flexibility to build solutions or select programs that ensure quality. We don’t just work; we produce results.
                     </p>
-                    <button className="cta-button">Get Started</button>
+                    <button
+                        className="cta-button"
+                        onClick={() => navigate("/contactus")}
+                    >
+                        Get started
+                    </button>
+                </div>
+                <div className='service'>
+                    <img src={image} alt="Service" />
                 </div>
             </div>
-        </section>
+        </section >
     );
 };
 

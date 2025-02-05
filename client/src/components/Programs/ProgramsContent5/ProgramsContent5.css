@@ -5,6 +5,7 @@
     justify-content: center;
     padding: 20px;
     box-sizing: border-box;
+
 }
 
 .programs-content5 {
@@ -24,6 +25,7 @@
     width: 100%;
     height: auto;
     border-radius: 8px;
+    margin-right: 40rem;
 }
 
 /* Right Section (Content) */

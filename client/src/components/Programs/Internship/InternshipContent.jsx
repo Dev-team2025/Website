@@ -1,6 +1,6 @@
 import React from 'react';
 import './InternshipContent.css';
-import image1 from '../../../assets/images/programs/image1.webp'
+import image1 from '../../../assets/images/programs/applyForJob.jpg'
 const InternshipContent = () => {
     return (
         <div className="main-internship" style={{ fontFamily: 'Arial, sans-serif', lineHeight: '1.6' }}>

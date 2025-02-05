@@ -1,6 +1,6 @@
 import React from 'react';
 import './ProgramsContent2.css';
-import image2 from '../../../assets/images/programs/image2.webp';
+import image2 from '../../../assets/images/programs/image1.jpg';
 
 function ProgramsContent2() {
     return (
@@ -23,7 +23,7 @@ function ProgramsContent2() {
                 <div className="text-content">
                     <h2>Need help figuring out which opportunities are a fit for you?</h2>
                     <p>
-                        Explore Your Fit is an interactive tool designed to help you explore business areas and opportunities within Deloitte that may be a good fit based on your background and interests.
+                        Explore Your Fit is an interactive tool designed to help you explore business areas and opportunities within DLithe that may be a good fit based on your background and interests.
                     </p>
                     <button className="cta-button">
                         Explore with us

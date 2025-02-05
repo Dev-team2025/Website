@@ -4,39 +4,38 @@ import './Testimonial.css';
 const testimonials = [
     {
         id: 1,
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-        author: "Adeline West",
-        position: "Divi Corner",
-        bgColor: "orange"
+        text: `Our partnership with DLithe for Learning & Development has been invaluable. Their tailored programs have significantly enhanced our team's performance and addressed our specific skill gaps.We've seen a measurable improvement in productivity and employee engagement.`,
+        author: 'Vibha Mishra',
+        position: 'L&D Manager, TietoEvry',
+        bgColor: 'orange'
     },
     {
         id: 2,
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-        author: "Theresa Reeves",
-        position: "Extra Space",
-        bgColor: "gray"
+        text: `The bootcamp provided by DLithe exceeded our expectations. The quality of the resources, the domain process and technical expertise, and the hands-on approach were instrumental in preparing our team for real-world challenges. We've hired several graduates and are consistently impressed with their skills.`,
+        author: 'Nagaraju',
+        position: 'Delivery Head, TietoEvry',
+        bgColor: 'gray'
     },
     {
         id: 3,
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-        author: "Rachel Graham",
-        position: "Bloom Co.",
-        bgColor: "gray"
+        text: `Thanks to DLithe’s placement training, our hiring success rate has dramatically increased. The comprehensive curriculum, combined with mock interviews and personalized feedback, gave our candidates the confidence and skills they needed to excel. We've onboarded several talented individuals who are already making significant contributions.`,
+        author: 'Bharat Kumar',
+        position: 'NMAMIT, Nitte',
+        bgColor: 'gray'
     },
     {
         id: 4,
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-        author: "Ada Leonard",
-        position: "Monarch Inc",
-        bgColor: "navy"
+        text: `The Faculty Development Program offered by DLithe was transformative. The emphasis on practical application and real-time implementation in the Artificial Intelligence domain made a significant difference in our faculty's ability to integrate new technologies into the classroom.Our instructors are now more confident and effective in their teaching.`,
+        author: 'Dr Mohan Kumar',
+        position: 'PESCE(MCA Department), Mandya',
+        bgColor: 'navy'
     }
 ];
 
 const Testimonial = () => {
     return (
         <section className="testimonials">
-            {/* <h2 className="section-title text-grey-200 3xl-text">TESTIMONIAL</h2> */}
-            <h2 className="section-title" style={{ fontSize: "60px", color: "white", fontFamily: "'Share Tech', Helvetica, Arial, Lucida, sans-serif" }}>What People Are Saying</h2>
+            <h2 className="section-title">What People Are Saying</h2>
             <div className="testimonial-grid">
                 {testimonials.map((item) => (
                     <div

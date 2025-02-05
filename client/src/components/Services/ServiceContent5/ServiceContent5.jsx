@@ -1,30 +1,26 @@
 import React, { useState, useRef } from 'react';
-import * as LucideIcons from 'lucide-react';
+import './ServiceContent5.css';
 
-const AccordionItem = ({ title, isOpen, onClick, children }) => {
+const AccordionItem = ({ title, content, isOpen, onClick }) => {
     const contentRef = useRef(null);
 
     return (
-        <div className="border-b border-gray-200 last:border-none">
-            <button
-                className="w-full flex justify-between items-center py-4 px-6 text-left hover:bg-gray-50 transition-colors"
+        <div className="accordion-item">
+            <div
+                className="accordion-header"
                 onClick={onClick}
             >
-                <span className="text-gray-800 font-medium">{title}</span>
-                {isOpen ? (
-                    <LucideIcons.Minus className="h-5 w-5 text-gray-600" />
-                ) : (
-                    <LucideIcons.Plus className="h-5 w-5 text-gray-600" />
-                )}
-            </button>
+                <span className="accordion-title">{title}</span>
+                <span className="accordion-icon">{isOpen ? '−' : '+'}</span>
+            </div>
             <div
+                className={`accordion-content ${isOpen ? 'open' : ''}`}
                 ref={contentRef}
-                className="overflow-hidden transition-all duration-300 ease-in-out"
-                style={{
-                    maxHeight: isOpen ? contentRef.current?.scrollHeight : 0,
-                }}
+                style={isOpen ? { maxHeight: contentRef.current?.scrollHeight + 'px' } : { maxHeight: 0 }}
             >
-                <div className="p-6 bg-gray-50">{children}</div>
+                <div className="accordion-content-inner">
+                    <p>{content}</p>
+                </div>
             </div>
         </div>
     );
@@ -35,65 +31,62 @@ function ServiceContent5() {
 
     const items = [
         {
-            title: 'Mauris Blandit Aliquet',
-            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+            title: 'Placement Training',
+            content: `Launch your career with our comprehensive placement training program. We have customized technical and non-technical skills, from problem solving, analytical skills, coding platforms to professional etiquette's.Academics have benefited from our value additions services such as resume building, mock interviews, group discussions, and LinkedIn profile enhancement.Gain the edge you need to succeed in today's competitive job market.`
         },
         {
-            title: 'Proin Eget Tortor',
-            content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+            title: 'Research and Development',
+            content: 'Our team has put extensive efforts towards working with various departments to build proof of concepts across technology domains, products in the areas of embedded systems and IoT. We have fostered the start- up culture engaging students beyond academics hours working on real time projects in the campus. Our expertise has helped in establishing the laboratory set up in many institutions. We have established the development centres across the campus such as Atal Incubation Centre Nitte, Mangalore Institute of Technology Moodabidri, SDMIT Ujire, Jain college of engineering and research Belagavi'
         },
         {
-            title: 'Pellentesque in Ipsum',
-            content: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+            title: 'Workshop’s and Faculty Development Programs',
+            content: 'Empower your faculty with cutting-edge skills through our development programs and workshops. We are specialized in technology implementation such as full stack, mobile apps, embedded systems, robotics, internet of things, artificial intelligence and many more bridging the gap between theory and practice. Our focus on proof-of-concept development ensures practical application and innovation. Elevate teaching effectiveness and drive institutional growth with our tailored solutions.'
         }
     ];
 
     return (
-        <div className="relative overflow-hidden min-h-screen">
-            {/* Background with curved edges on both top and bottom */}
-            <div
-                className="absolute inset-0 bg-[#15314e]"
-                style={{
-                    borderRadius: '40% 0 0 40%',
-                }}
-            />
-
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    {/* Image Section */}
-                    <div className="relative">
+        <div className="service-section">
+            <div className="service-wrapper">
+                <div className="service-layout">
+                    <div className="service-image-container">
                         <img
-                            src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80"
+                            src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
                             alt="Laptop repair"
-                            className="rounded-lg shadow-xl w-full h-auto object-cover" style={{ borderRadius: "50px", width: "80%", marginTop: "50px" }}
+                            className="service-image"
                         />
                     </div>
-
-                    {/* Content Section */}
-                    <div className="space-y-6">
-                        <h2 className="text-4xl font-bold text-white">
-                            Device Repair & Troubleshooting
-                        </h2>
-                        <p className="text-lg text-gray-300">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                            enim ad minim veniam, quis nostrud exercitation
+                    <div className="service-info">
+                        <h2 className="service-title">Academics </h2>
+                        <p className="service-description">
+                            The academics institutions be it degree, diploma, engineering or universities, keeping the pace with the industry transformation. The supply of human resources from the campus is definitely need to be an agile workforce to meet the global industry needs.  We are engaged  as specialist to join hands to develop required skill and competence at the academics. These engagements have enabled us to implement skill development programs, conduct workshops, faculty development programs, start-up incubation support for upcoming generation. Collaborating with DLithe have ensured access to cutting-edge expertise and cost-effective solutions across the technology areas.
                         </p>
 
-                        <div className="bg-white/95 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden">
+                        <div className="accordion-wrapper">
                             {items.map((item, index) => (
                                 <AccordionItem
                                     key={index}
                                     title={item.title}
+                                    content={item.content}
                                     isOpen={openItem === index}
                                     onClick={() => setOpenItem(openItem === index ? null : index)}
-                                >
-                                    <p className="text-gray-600">{item.content}</p>
-                                </AccordionItem>
+                                />
                             ))}
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div className="wave-shape-container">
+                <svg
+                    viewBox="0 0 1440 120"
+                    className="wave-shape"
+                    preserveAspectRatio="none"
+                >
+                    <path
+                        d="M0,32L60,42.7C120,53,240,75,360,74.7C480,75,600,53,720,48C840,43,960,53,1080,58.7C1200,64,1320,64,1380,64L1440,64L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z"
+                        fill="#ffffff"
+                    />
+                </svg>
             </div>
         </div>
     );

@@ -43,8 +43,4 @@ Part1.propTypes = {
 };
 
 // Default Props
-Part1.defaultProps = {
-    onButtonClick: () => alert("Quote button clicked!"),
-};
-
 export default Part1;

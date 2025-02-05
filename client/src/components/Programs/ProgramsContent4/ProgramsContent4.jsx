@@ -1,9 +1,9 @@
 import React from "react";
 import "./ProgramsContent4.css";
-import image7 from '../../../assets/images/programs/image7.webp';
-import image8 from '../../../assets/images/programs/image8.webp';
-import image9 from '../../../assets/images/programs/image9.webp';
-import image10 from '../../../assets/images/programs/image10.webp';
+import image7 from '../../../assets/images/programs/bestWorkSpace.jpg';
+import image8 from '../../../assets/images/programs/furtunerCompany.jpg';
+import image9 from '../../../assets/images/programs/caringHands.jpg';
+import image10 from '../../../assets/images/programs/equalityLeadership.jpg';
 const ProgramsContent4 = () => {
     return (
         <div className="life-at-dlithe">

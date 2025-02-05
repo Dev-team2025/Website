@@ -12,8 +12,8 @@
 
 /* Content Inside Ellipse */
 .content {
-    max-width: 600px;
-    text-align: left;
+    max-width: 900px;
+    text-align: center;
     z-index: 3;
     padding: 0 1rem;
     margin: 0 auto;
@@ -25,32 +25,44 @@
     margin-top: 20px;
     margin-bottom: 20px;
     font-family: 'Share Tech', Helvetica, Arial, Lucida, sans-serif;
-    text-align: left;
+    text-align: center;
 }
 
+.service img {
+    width: 100%;
+    height: auto;
+    max-width: 30rem;
+    max-height: 30rem;
+    border-radius: 50%;
+}
+
+.content p {
+    width: 100%;
+    max-width: 40rem;
+    text-align: center;
+    margin: 0 auto;
+    color: white;
+}
+
+/* Adjustments for larger screens */
 @media (min-width: 768px) {
     .content h1 {
         font-size: 3rem;
+    }
+
+    .content p {
+        font-size: 1.2rem;
+    }
+
+    .cta-button {
+        font-size: 1.2rem;
+        padding: 15px 30px;
     }
 }
 
 @media (min-width: 1024px) {
     .content h1 {
         font-size: 4rem;
-    }
-}
-
-/* Paragraph Styling */
-.content p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: white;
-    margin-bottom: 10px;
-}
-
-@media (min-width: 768px) {
-    .content p {
-        font-size: 1.2rem;
     }
 }
 
@@ -71,13 +83,6 @@
 
 .cta-button:hover {
     background: #ff7a00;
-}
-
-@media (min-width: 768px) {
-    .cta-button {
-        font-size: 1.2rem;
-        padding: 15px 30px;
-    }
 }
 
 /* Responsive Adjustments */

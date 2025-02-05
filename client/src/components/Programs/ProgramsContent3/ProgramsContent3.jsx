@@ -1,9 +1,9 @@
 import React from 'react';
 import './ProgramsContent3.css'; // Include a separate CSS file for styles
-import image3 from '../../../assets/images/programs/image3.webp'
-import image4 from '../../../assets/images/programs/image4.webp'
-import image5 from '../../../assets/images/programs/image5.webp'
-import image6 from '../../../assets/images/programs/image6.webp'
+import image3 from '../../../assets/images/programs/mentorship.jpg'
+import image4 from '../../../assets/images/programs/impactfulProject.jpg'
+import image5 from '../../../assets/images/programs/growthanddev.jpg'
+import image6 from '../../../assets/images/programs/Worktogether.jpg'
 const ProgramsContent3 = () => {
     return (
         <div className="programs-content">

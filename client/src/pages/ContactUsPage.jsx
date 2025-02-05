@@ -11,8 +11,7 @@ function ContactUsPage() {
             <Part1 title="Get In Touch" />
             <ContactContent2 />
             <ContactContent1 />
-            {/* <h1>Pending with 2 more components</h1> */}
-            <Footer />
+
         </div>
     )
 }

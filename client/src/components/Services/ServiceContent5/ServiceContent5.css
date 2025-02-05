@@ -35,7 +35,6 @@
     color: #333;
     margin-bottom: 2rem;
     line-height: 1.6;
-    text-align: justify;
 }
 
 /* Accordion Styles */
@@ -111,7 +110,8 @@
 /* Responsive Design */
 @media (min-width: 1024px) {
     .service-layout {
-        flex-direction: row;
+        flex-direction: row-reverse;
+        /* Reverse order for larger screens */
     }
 
     .service-info {
@@ -123,17 +123,19 @@
     }
 }
 
-@media (mix-width: 400px) {
+@media (max-width: 768px) {
     .service-layout {
-        flex-direction: row;
-        margin-top: -10px;
+        flex-direction: column;
+        /* Default column layout for smaller screens */
     }
 
     .service-info {
-        width: 50%;
+        order: 2;
+        /* Ensure content appears after the image */
     }
 
     .service-image-container {
-        width: 50%;
+        order: 1;
+        /* Ensure image appears first */
     }
 }
